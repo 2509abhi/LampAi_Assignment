@@ -1,0 +1,57 @@
+<%- include("header") -%>
+    <%- include("nav") -%>
+        <div class="container">
+            <h1>Startup Idea's: </h1>
+            <table class="table table-success table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">feedback</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <% item.forEach(element => { %>
+                        <% if(element.Rating == "0") { %>
+                        <tr>
+                            <th scope="row"><%= element.Id %></th>
+                            <td><%= element.Name %></td>
+                            <td><%= element.Year %></td>
+                            <td><%= element.Description %></td>
+                            <td><a class="btn btn-outline-success" href="/<%= element.Id %>">Status</a></td>
+                            <td><a href="/del<%= element.Id %>" class="fa-solid fa-trash-can fa-beat" style="color: #7de07e;"></a></td>
+                        </tr>
+                        <% } else {%>
+                            <tr>
+                                <th scope="row"><%= element.Id %></th>
+                                <td><%= element.Name %></td>
+                                <td><%= element.Year %></td>
+                                <td><%= element.Description %></td>
+                                <td><a class="btn btn-success" href="/<%= element.Id %>">Status</a></td>
+                                <td><a href="/del<%= element.Id %>" class="fa-solid fa-trash-can fa-beat" style="color: #7de07e;"></a></td>
+                            </tr>
+                            <% } %>
+                        <% }) %>
+                </tbody>
+            </table>
+            <form action="/student" method="post">
+                <h1>Add Yours: </h1>
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input name="name" type="text" class="form-control" autocomplete="off" placeholder="Full Name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Year</label>
+                    <input name="year" type="number" class="form-control" autocomplete="off" placeholder="1-4">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <input name="description" type="text" class="form-control" autocomplete="off" placeholder="Description">
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+        <%- include("footer") -%>

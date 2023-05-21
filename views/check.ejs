@@ -1,0 +1,22 @@
+<%- include("header") -%>
+    <%- include("nav") -%>
+        <div class="container">
+            <h1>Name: <%= item.Name %></h1>
+            <p>Year Currently Studied in <%= item.Year %> Year</p>
+            <h2>Description :</h2>
+            <p><%= item.Description %></p>
+            <h2>Rating :</h2>
+            <% if(item.Rating == "0") { %>
+            <p class="btn btn-outline-success">Feedback Not Given Yet!!!</p>
+            <% } else { %>
+            <p><%= item.Rating %></p>
+            <% } %>
+            <h2>Feedback</h2>
+            <h5><%= item.Feedback %></h5>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <%- include("footer") -%>

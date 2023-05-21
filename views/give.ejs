@@ -1,0 +1,26 @@
+<%- include("header") -%>
+<%- include("nav") -%>
+<div class="container">
+    <h1>Name: <%= item.Name %></h1>
+    <p>Year Currently Studied in <%= item.Year %> Year</p>
+    <h2>Description :</h2>
+    <h5><%= item.Description %></h5>
+    <form action="/peer" method="post">
+        
+        <div class="mb-3">
+            <input type="hidden" value="<%= item.Id %>" name="hidden">
+            <label class="form-label">Rate</label>
+            <input name="rate" type="number" class="form-control" autocomplete="off" placeholder="1-5">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Feedback</label>
+            <input name="feedback" type="text" class="form-control" autocomplete="off" placeholder="Be polite">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+<%- include("footer") -%>

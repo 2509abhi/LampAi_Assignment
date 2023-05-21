@@ -1,0 +1,54 @@
+body{
+  padding: 0;  
+}
+table{
+  border: solid 2px #14A44D;
+}
+a{
+  text-decoration-line: none;
+  color: #14A44D;
+  padding: .5rem;
+}
+.container {
+  min-height: 100%;
+  position: relative;
+  padding: 1rem;
+}
+.con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 245px;
+}
+
+.con .fish {
+  margin-left: 600px;
+  width: 200px;
+  border-radius: 20px;
+}
+.contact{
+  height: 500px;
+}
+.form{
+  margin: 5rem auto;
+  text-align: center;
+}
+.tb{
+  width: 800px;
+}
+
+/* footer */
+footer p{
+  text-align: center;
+  margin-bottom: 0;
+  padding: 20px;
+  border-radius: 5px 5px 0 0 ;
+}
+footer{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}

@@ -1,0 +1,66 @@
+<%- include("header") -%>
+    <%- include("nav") -%>
+        <div class="container">
+            <h1>Startup Idea's (Already given Feedback): </h1>
+            <table class="table table-success table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">feedback</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <% item.forEach(element => { %>
+                        <% if(element.Rating != "0") { %>
+                        <tr>
+                            <th scope="row"><%= element.Id %></th>
+                            <td><%= element.Name %></td>
+                            <td><%= element.Year %></td>
+                            <td><%= element.Description %></td>
+                            <td><a class="btn btn-success" href="/<%= element.Id %>">Check</a></td>
+                        </tr>
+                        <% } %>
+                    <% }) %>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Startup Idea's (Not Given Feedback): </h1>
+            <table class="table table-light table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">feedback</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <% item.forEach(element => { %>
+                        <% if(element.Rating == "0") { %>
+                            <tr>
+                                <th scope="row"><%= element.Id %></th>
+                                <td><%= element.Name %></td>
+                                <td><%= element.Year %></td>
+                                <td><%= element.Description %></td>
+                                <td><a class="btn btn-outline-success" href="/give<%= element.Id %>">Give</a></td>
+                            </tr>
+                            <% } %>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <%- include("footer") -%>
